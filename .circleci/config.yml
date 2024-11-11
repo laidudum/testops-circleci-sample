@@ -58,6 +58,7 @@ jobs:
             echo "Installing Katalon agent"
             mkdir /agent && cd /agent
             wget -O agent "${AGENT_DOWNLOAD_LINK}"
+            unzip agent
             echo "${JOB_INFO}" >> job.json
 
             set +x
