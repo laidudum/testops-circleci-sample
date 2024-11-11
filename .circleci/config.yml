@@ -57,8 +57,7 @@ jobs:
 
             echo "Installing Katalon agent"
             mkdir /agent && cd /agent
-            wget -O agent.zip "${AGENT_DOWNLOAD_LINK}"
-            unzip agent.zip
+            wget -O agent "${AGENT_DOWNLOAD_LINK}"
             echo "${JOB_INFO}" >> job.json
 
             set +x
@@ -70,7 +69,7 @@ jobs:
             ls -al
 
             echo "Executing test"
-            xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" ./agent start-agent --ci
+            xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" ./cli-linux-x64 start-agent
             ret_code=$?
             
             exit $ret_code
