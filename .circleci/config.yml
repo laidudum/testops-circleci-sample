@@ -6,7 +6,7 @@ parameters:
     default: "latest"
   agent-download-link:
     type: string
-    default: ""
+    default: "https://github.com/katalon-studio/katalon-agent/releases/download/v2.3.3/katalon-agent-linux-x64-v2.3.3.zip"
   job-info:
     type: string
     default: ""
@@ -15,7 +15,7 @@ parameters:
     default: ""
   server-url:
     type: string
-    default: ""
+    default: "https://testops.katalon.io"
 
 jobs:
   katalon-test:
