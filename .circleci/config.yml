@@ -68,8 +68,11 @@ jobs:
             chmod 777 *
             ls -al
 
+            echo "check file"
+            file agent
+
             echo "Executing test"
-            xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" ./cli-linux-x64 start-agent
+            xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" ./agent start-agent --ci
             ret_code=$?
             
             exit $ret_code
